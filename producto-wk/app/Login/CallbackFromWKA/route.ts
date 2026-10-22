@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { COOKIE_REFRESH, COOKIE_STATE, COOKIE_TOKEN, tokenDesdeCodigo } from "@/lib/wk";
+import { COOKIE_STATE, guardarTokens, tokenDesdeCodigo } from "@/lib/wk";
 
 // Aquí vuelve WK después del login (es la dirección registrada en WK).
 export async function GET(request: NextRequest) {
@@ -23,25 +23,9 @@ export async function GET(request: NextRequest) {
     return error("No se ha podido obtener el token de Wolters Kluwer.");
   }
 
-  const comunes = {
-    httpOnly: true,
-    sameSite: "lax" as const,
-    secure: process.env.NODE_ENV === "production",
-    path: "/",
-  };
-
   const res = NextResponse.redirect(new URL("/", request.url));
   res.cookies.delete(COOKIE_STATE);
-  res.cookies.set(COOKIE_TOKEN, tokens.access_token, {
-    ...comunes,
-    maxAge: tokens.expires_in,
-  });
-  if (tokens.refresh_token) {
-    res.cookies.set(COOKIE_REFRESH, tokens.refresh_token, {
-      ...comunes,
-      maxAge: 30 * 24 * 60 * 60, // 30 días
-    });
-  }
+  guardarTokens(res, tokens);
   return res;
 }
 

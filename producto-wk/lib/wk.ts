@@ -1,4 +1,5 @@
 import "server-only";
+import type { NextResponse } from "next/server";
 
 // Todo lo que habla con Wolters Kluwer. Solo se ejecuta en el servidor:
 // el client secret, la Apikey y los tokens nunca llegan al navegador.
@@ -72,6 +73,29 @@ export function tokenDesdeRefresh(refreshToken: string): Promise<WkTokens> {
     grant_type: "refresh_token",
     refresh_token: refreshToken,
   });
+}
+
+// Opciones comunes de nuestras cookies: el navegador no las puede leer (httpOnly).
+export const opcionesCookie = {
+  httpOnly: true,
+  sameSite: "lax" as const,
+  secure: process.env.NODE_ENV === "production",
+  path: "/",
+};
+
+// Guarda el token y el refresh_token en las cookies de la respuesta.
+export function guardarTokens(res: NextResponse, tokens: WkTokens): void {
+  res.cookies.set(COOKIE_TOKEN, tokens.access_token, {
+    ...opcionesCookie,
+    // Un minuto antes de que caduque en WK, para no usar un token a punto de morir.
+    maxAge: Math.max(tokens.expires_in - 60, 60),
+  });
+  if (tokens.refresh_token) {
+    res.cookies.set(COOKIE_REFRESH, tokens.refresh_token, {
+      ...opcionesCookie,
+      maxAge: 30 * 24 * 60 * 60, // 30 días
+    });
+  }
 }
 
 // Error con el código HTTP real de WK (401, 403, 404, 429...).
