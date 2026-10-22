@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import Link from "next/link";
 import { cookies } from "next/headers";
 import { COOKIE_REFRESH, COOKIE_TOKEN } from "@/lib/wk";
 
@@ -33,6 +34,12 @@ async function Sesion() {
   return (
     <div className="flex flex-col items-center gap-3">
       <p className="text-lg font-medium text-green-700">Sesión iniciada</p>
+      <Link
+        href="/empresas"
+        className="rounded-full bg-blue-700 px-6 py-3 font-medium text-white hover:bg-blue-800"
+      >
+        Ver mis empresas
+      </Link>
       <a href="/salir" className="text-zinc-600 underline hover:text-zinc-900">
         Salir
       </a>
