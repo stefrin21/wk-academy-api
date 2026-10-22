@@ -1,6 +1,6 @@
 # Ficha técnica · API de Wolters Kluwer
 
-Para adjuntar en la chat de Copilot con `#file:api/FICHA-API-WK.md` cada vez que un prompt
+Para adjuntar en la chat de Copilot con `#file:FICHA-API-WK.md` cada vez que un prompt
 hable con las API. Son las reglas que hemos comprobado probando la API de a3innuva Nómina.
 
 ## Credenciales
