@@ -38,6 +38,28 @@ export function getEmpleados(empresa: number | string, token: string): Promise<E
   return leerTodo<Empleado>(`/api/companies/${encodeURIComponent(String(empresa))}/employees`, token);
 }
 
+export type Centro = {
+  workplaceCode: string;
+  workplaceName: string;
+};
+
+export function getCentros(empresa: number | string, token: string): Promise<Centro[]> {
+  return leerTodo<Centro>(`/api/companies/${encodeURIComponent(String(empresa))}/workplaces`, token);
+}
+
+// Antigüedad media en años de las personas en plantilla, a partir de la fecha de alta.
+// Si no hay nadie, 0. `hoy` lo pasa la página (después de await connection()).
+export function antiguedadMediaAnios(empleados: Empleado[], hoy: Date): number {
+  const MS_ANIO = 365.25 * 24 * 60 * 60 * 1000;
+  const anios = empleados
+    .filter(estaEnPlantilla)
+    .map((e) => Date.parse(e.enrolmentDate))
+    .filter((alta) => Number.isFinite(alta) && alta > Date.UTC(1900, 0, 1))
+    .map((alta) => Math.max(0, (hoy.getTime() - alta) / MS_ANIO));
+  if (anios.length === 0) return 0;
+  return anios.reduce((a, b) => a + b, 0) / anios.length;
+}
+
 // «En plantilla» = sin fecha de baja (la API pone 0001-01-01).
 export function estaEnPlantilla(e: Empleado): boolean {
   return !e.dropDate || e.dropDate.startsWith("0001-01-01");
