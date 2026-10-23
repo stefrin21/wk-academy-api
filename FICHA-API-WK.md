@@ -31,6 +31,20 @@ hable con las API. Son las reglas que hemos comprobado probando la API de a3innu
   - `api-version: 1.0`
 - **Solo lectura (GET).** En este curso no se escribe nada en las API.
 
+## Rutas de Nómina que usamos
+
+Todas con `pageNumber` y `pageSize`:
+
+| Ruta | Qué devuelve | Campos útiles |
+|---|---|---|
+| `/api/companies` | Las empresas a las que el usuario tiene acceso | `companyCode`, `companyName`, `identifierNumber` (NIF) |
+| `/api/companies/{empresa}/employees` | Los empleados, en activo y de baja | `enrolmentDate` (alta), `dropDate` (baja), `workplaceCode` |
+| `/api/companies/{empresa}/workplaces` | Los centros de trabajo | `workplaceCode`, `workplaceName` |
+| `/api/companies/{empresa}/pays/{año}/{mes}` | Las nóminas del mes, una por persona | `costBusiness` (coste para la empresa), `totalGross` (bruto) |
+
+⚠️ Empleados y nóminas traen también `completeName` e `identifierNumber` (nombre y DNI de cada
+persona): **no se enseñan nunca**. En pantalla, solo totales.
+
 ## Trampas comprobadas
 
 - Sin `api-version: 1.0`, algunas rutas responden **404** («Resource not found»).
