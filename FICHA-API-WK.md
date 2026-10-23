@@ -35,9 +35,12 @@ hable con las API. Son las reglas que hemos comprobado probando la API de a3innu
 
 - Sin `api-version: 1.0`, algunas rutas responden **404** («Resource not found»).
 - Las listas piden siempre `pageNumber` y `pageSize`. Sin ellos, otra vez **404**.
-- Si no hay datos (por ejemplo, una empresa sin empleados), la API responde **vacío**, no con una
-  lista vacía.
-- En Nómina, un empleado **en activo** tiene fecha de baja `"0001-01-01"`.
+- Si no hay datos (por ejemplo, una empresa sin empleados), la API responde **`null`** (o vacío),
+  no con una lista vacía. Hay que tratarlo como una lista vacía: **0**, no un error.
+- En Nómina, un empleado **en activo** tiene fecha de baja `"0001-01-01T00:00:00Z"`: hay que
+  comprobar que **empiece por** `0001-01-01`.
+- Para conectarse desde el terminal, usar `curl.exe`: el cortafuegos de WK bloquea otras
+  herramientas (por ejemplo Python) con «error code: 1010».
 
 ## Qué significa cada respuesta
 
