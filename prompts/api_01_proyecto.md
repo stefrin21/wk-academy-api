@@ -12,15 +12,17 @@ Quiero crear el proyecto web de mi producto sobre las API de Wolters Kluwer.
   npx create-next-app@latest producto-wk --yes
 - Hacer que npm run dev arranque en el puerto 53971 (next dev -p 53971): es el puerto de la
   dirección de vuelta que Wolters Kluwer tiene registrada para el login.
-- Crear producto-wk/.env.local con estas líneas vacías, que relleno yo:
+- Crear producto-wk/.env.local con estas cuatro líneas:
   WK_CLIENT_ID=
   WK_CLIENT_SECRET=
   WK_APIKEY=
   WK_REDIRECT_URI=http://localhost:53971/Login/CallbackFromWKA
+  Si existe conexion/.env.local (de la guía de conexión), copiar de ahí los valores de
+  WK_CLIENT_ID, WK_CLIENT_SECRET y WK_APIKEY. Si no existe, dejarlos vacíos: los relleno yo.
 - Comprobar que .gitignore excluye .env.local.
 
 ## Qué NO debe hacer
-- No escribir ninguna credencial: los valores los pongo yo.
+- No enseñarme las claves en la chat ni en el terminal.
 - No crear páginas ni instalar otras librerías todavía.
 
 ## Cómo sabemos que salió bien
@@ -28,6 +30,6 @@ Quiero crear el proyecto web de mi producto sobre las API de Wolters Kluwer.
 - producto-wk/.env.local existe y .gitignore lo excluye.
 ```
 
-**Después:** abran `producto-wk/.env.local`, peguen sus credenciales de Wolters Kluwer (una por
-línea, sin espacios) y **guarden el archivo**. Paren `npm run dev` (Ctrl + C) y vuelvan a
-arrancarlo: las claves se leen solo al arrancar.
+**Después:** abran `producto-wk/.env.local` y comprueben que las tres claves están rellenas. Si
+están vacías, péguenlas ustedes (una por línea, sin espacios) y **guarden el archivo**. Paren
+`npm run dev` (Ctrl + C) y vuelvan a arrancarlo: las claves se leen solo al arrancar.

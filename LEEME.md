@@ -19,7 +19,8 @@ Wolters Kluwer.
 | Archivo | Para qué |
 |---|---|
 | `FICHA-API-WK.md` | Las reglas de las API que Copilot tiene que conocer. Se adjunta en la chat con `#file:FICHA-API-WK.md` |
-| `prompts/api_01` … `api_05` | La base técnica: proyecto, login con WK, protección de rutas, empresas y ficha |
+| `prompts/api_01` … `api_05` | La base: proyecto, login con WK, protección de las páginas, empresas y ficha |
+| `prompts/api_06` … `api_08` | Copilot ve su aplicación (MCP), su PRD con las skills y sus funcionalidades |
 | `.agents/skills/` | Las cuatro skills de producto, ya instaladas: `problem-statement`, `jobs-to-be-done`, `prd-development` y `user-story` |
 
 La aplicación se crea dentro de este repositorio, en la carpeta `producto-wk`.
