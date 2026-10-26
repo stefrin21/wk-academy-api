@@ -20,6 +20,6 @@ Para cada punto, dime qué has encontrado y qué propones. Espera a que te diga 
 **Después:** decidan, punto por punto, qué arreglar. Por ejemplo: *«Arregla el 1 y el 2. En el
 3, enseña el dato pero con un aviso de que puede ser de prueba.»*
 
-**En nuestra prueba:** *COMERCIO BARCELONA* tiene en marzo de 2026 200 nóminas y 601.489 €, y
-en los demás meses entre 1 y 3 nóminas. ¿Lo enseñamos? ¿Con un aviso? ¿Lo quitamos? Es una
+**En nuestra prueba:** *COMERCIO BARCELONA* tiene en marzo de 2026 357 nóminas y
+1.062.528 €, en enero 154, y en los demás meses entre 1 y 3. ¿Lo enseñamos? ¿Con un aviso? ¿Lo quitamos? Es una
 decisión de producto, no de Copilot.

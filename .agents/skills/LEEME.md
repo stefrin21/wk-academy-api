@@ -30,6 +30,18 @@ ustedes contestan («sí» acepta la respuesta recomendada).
 `grilling` está copiada sin cambios; a `grill-me` le hemos añadido una línea para que funcione
 también en Copilot.
 
+## Las API de Wolters Kluwer
+
+| Skill | Para qué |
+|---|---|
+| `wk-api-nomina` | Todo sobre la API de a3innuva Nómina: el login, las cabeceras, las trampas, las **189 lecturas** que ofrece y sus campos. Copilot la usa para saber qué datos existen y cómo pedirlos |
+
+**Cuándo usarla:** cada vez que quieran algo de la API que no está en la ficha. Por ejemplo:
+*«Usa la skill wk-api-nomina: ¿qué datos hay sobre las bajas por enfermedad?»* o *«…¿cómo saco
+las horas de formación de cada empresa?»*.
+
+**Origen:** la definición oficial de la API (OpenAPI) del portal a3developers de Wolters Kluwer.
+
 ## Cómo se usan
 
 Escriban `/` en la chat de Copilot y elijan la skill, o pídanle a Copilot
