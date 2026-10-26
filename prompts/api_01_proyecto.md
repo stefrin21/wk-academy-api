@@ -22,7 +22,6 @@ Quiero crear el proyecto web de mi producto sobre las API de Wolters Kluwer.
 - Comprobar que .gitignore excluye .env.local.
 
 ## Qué NO debe hacer
-- No enseñarme las claves en la chat ni en el terminal.
 - No crear páginas ni instalar otras librerías todavía.
 
 ## Cómo sabemos que salió bien

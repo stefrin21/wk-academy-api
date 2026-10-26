@@ -20,7 +20,6 @@ gráfico.
 - La parte que lee datos va en un componente dentro de <Suspense>.
 
 ## Qué NO debe hacer
-- No enseñar nombres, DNI ni importes de personas: solo el total del mes.
 - No escribir nada en la API.
 
 ## Cómo sabemos que salió bien

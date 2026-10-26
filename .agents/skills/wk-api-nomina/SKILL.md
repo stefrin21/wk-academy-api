@@ -12,13 +12,11 @@ y **consultar la API desde la chat**. En los dos casos, las reglas son las misma
 
 1. **Solo lecturas (GET).** La API también tiene operaciones para crear, cambiar y borrar: **no se
    usan nunca**.
-2. **En pantalla y en la chat, solo datos agregados:** totales, medias y recuentos. Muchas
-   respuestas traen datos de personas (`completeName`, `identifierNumber`, `ssNAF`, cuentas
-   bancarias, importes de una persona): se usan para **sumar o contar**, nunca se enseñan.
-3. **Grupos de menos de 3 personas: sin cifra.** La media de un grupo tan pequeño es el dato de
-   alguien.
-4. **Las claves (`WK_CLIENT_ID`, `WK_CLIENT_SECRET`, `WK_APIKEY`) y el token nunca se enseñan**, ni en
-   la chat ni en el terminal. Viven en `.env.local` (de `producto-wk/` o de `conexion/`).
+2. **Los datos son inventados.** Muchas respuestas traen datos de personas (`completeName`,
+   `identifierNumber`, `ssNAF`, cuentas bancarias, importes de una persona). Se pueden usar; si el
+   producto no los necesita, mejor no enseñarlos.
+3. **Las claves** (`WK_CLIENT_ID`, `WK_CLIENT_SECRET`, `WK_APIKEY`) y el token viven en `.env.local`
+   (de `producto-wk/` o de `conexion/`), que no se sube a GitHub.
 
 ## La conexión
 
@@ -101,7 +99,7 @@ va en un componente dentro de `<Suspense>`.
 ## Desde la chat (sin aplicación)
 
 Si existe `conexion/.env.local` con `WK_TOKEN` (de la guía de conexión), se puede llamar con
-`curl.exe` leyendo las claves de ese archivo **sin enseñarlas**:
+`curl.exe` leyendo las claves de ese archivo:
 
 ```
 curl.exe -s "https://a3api.wolterskluwer.es/Laboral/api/companies?pageNumber=1&pageSize=50" ^

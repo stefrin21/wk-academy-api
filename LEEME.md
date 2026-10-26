@@ -29,6 +29,5 @@ La aplicación se crea dentro de este repositorio, en la carpeta `producto-wk`.
 ## Reglas del producto
 
 - **Solo lectura:** en este curso no se escribe nada en las API.
-- **Solo datos agregados en pantalla:** nunca nombres, DNI ni importes de personas concretas.
-- **Las credenciales solo en `producto-wk/.env.local`:** nunca en el código, en GitHub ni en la
-  chat.
+- **Las credenciales van en `.env.local`**, que no se sube a GitHub.
+- **Los datos son inventados:** se pueden usar todos, también los de personas.

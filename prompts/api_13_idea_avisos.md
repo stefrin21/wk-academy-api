@@ -19,7 +19,6 @@ Quiero que la lista de empresas me avise de las que necesitan atención.
 - Explicar en una línea, debajo de la tabla, qué significa cada aviso.
 
 ## Qué NO debe hacer
-- No enseñar nombres ni datos de personas.
 - No escribir nada en la API.
 
 ## Cómo sabemos que salió bien
