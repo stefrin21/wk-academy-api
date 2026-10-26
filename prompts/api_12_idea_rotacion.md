@@ -26,4 +26,4 @@ Quiero ver en la ficha de cada empresa cuántas personas han entrado y salido ca
 - Una empresa sin empleados enseña una frase, no un error.
 ```
 
-**En nuestra prueba:** *COMERCIO BARCELONA* tiene 22 altas en 2022 y 7 bajas en 2021.
+**En nuestra prueba:** *COMERCIO BARCELONA* tiene 119 altas en 2023 y 17 bajas en 2024.

@@ -33,6 +33,9 @@ hable con las API. Son las reglas que hemos comprobado probando la API de a3innu
 
 ## Rutas de Nómina que usamos
 
+La lista completa de las 189 lecturas está en la skill `wk-api-nomina`
+(`.agents/skills/wk-api-nomina/`).
+
 Todas con `pageNumber` y `pageSize`:
 
 | Ruta | Qué devuelve | Campos útiles |
@@ -49,6 +52,12 @@ persona): **no se enseñan nunca**. En pantalla, solo totales.
 
 - Sin `api-version: 1.0`, algunas rutas responden **404** («Resource not found»).
 - Las listas piden siempre `pageNumber` y `pageSize`. Sin ellos, otra vez **404**.
+- `pageSize` es **50 como máximo** (lo dice la documentación). Hay que **leer todas las páginas**
+  (pageNumber 1, 2, 3…) hasta que una venga con menos de 50: si no, las empresas grandes salen
+  cortadas. Ojo: la API acepta más de 50, pero corta sin avisar a los 300.
+- Las listas aceptan también `filter` y `orderBy`, por ejemplo
+  `filter=workplaceCode eq 1` y `orderBy=employeeCode asc` (no los hemos probado todavía: si
+  fallan, filtren ustedes los datos después de leerlos).
 - Si no hay datos (por ejemplo, una empresa sin empleados), la API responde **`null`** (o vacío),
   no con una lista vacía. Hay que tratarlo como una lista vacía: **0**, no un error.
 - En Nómina, un empleado **en activo** tiene fecha de baja `"0001-01-01T00:00:00Z"`: hay que

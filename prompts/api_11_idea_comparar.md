@@ -26,4 +26,4 @@ Quiero comparar todas mis empresas en una sola tabla.
 - Veo todas mis empresas, y una empresa sin empleados enseña 0 o «—».
 ```
 
-**En nuestra prueba:** 6 empresas, de 0 a 163 personas en plantilla.
+**En nuestra prueba:** 6 empresas, de 0 a 435 personas en plantilla.
