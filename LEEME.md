@@ -22,7 +22,7 @@ Wolters Kluwer.
 | `prompts/api_01` … `api_05` | La base: proyecto, login con WK, protección de las páginas, empresas y ficha |
 | `prompts/api_06` … `api_08` | Copilot ve su aplicación (MCP), su PRD con las skills y sus funcionalidades |
 | `prompts/api_09` … `api_14` | Módulo 5: el plan del día, cuatro ideas de funcionalidades y la revisión de calidad |
-| `.agents/skills/` | Skills ya instaladas: las cuatro de producto (`problem-statement`, `jobs-to-be-done`, `prd-development`, `user-story`) `grilling` / `grill-me`, para poner a prueba una idea, y `wk-api-nomina`, con todas las lecturas de la API de Nómina |
+| `.agents/skills/` | Skills ya instaladas: las cuatro de producto (`problem-statement`, `jobs-to-be-done`, `prd-development`, `user-story`) `grilling` / `grill-me`, para poner a prueba una idea, y las de las API de WK: `wk-api-nomina`, `wk-api-a3factura` y `wk-api-contabilidad` |
 
 La aplicación se crea dentro de este repositorio, en la carpeta `producto-wk`.
 
