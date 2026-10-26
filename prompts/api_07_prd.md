@@ -16,8 +16,7 @@ Lee .agents/skills/problem-statement/SKILL.md y aplica la skill a esta idea:
 
 Contexto: somos una asesoría laboral. Nuestra aplicación lee, con las API de Wolters Kluwer,
 los datos de a3innuva Nómina de las empresas que llevamos: empresas, personas en plantilla,
-fechas de alta y de baja, centros de trabajo y nóminas. Solo datos agregados, nunca de
-personas concretas.
+fechas de alta y de baja, centros de trabajo y nóminas.
 
 No propongas soluciones todavía. Separa hechos, supuestos y preguntas abiertas.
 Responde en español y guárdalo en docs/problema.md.

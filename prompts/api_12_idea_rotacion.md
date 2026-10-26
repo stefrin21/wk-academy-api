@@ -18,7 +18,6 @@ Quiero ver en la ficha de cada empresa cuántas personas han entrado y salido ca
 - Si la empresa no tiene empleados, decirlo con una frase.
 
 ## Qué NO debe hacer
-- No enseñar nombres ni datos de personas: solo los recuentos por año.
 - No escribir nada en la API.
 
 ## Cómo sabemos que salió bien

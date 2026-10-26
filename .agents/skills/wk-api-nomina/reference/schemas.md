@@ -1,6 +1,6 @@
 # API a3innuva Nómina · los campos de las respuestas
 
-Un apartado por tipo de respuesta, con sus campos y su tipo. ⚠️ Los campos con datos de personas (nombre, DNI, NAF, importes de una persona) **no se enseñan nunca**: solo se usan para sumar o contar.
+Un apartado por tipo de respuesta, con sus campos y su tipo. Los datos son inventados: los de personas (nombre, DNI, NAF, importes) también se pueden usar.
 
 ## Absenteeism
 

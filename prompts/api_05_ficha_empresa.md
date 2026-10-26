@@ -16,7 +16,6 @@ de mi PRD.
 - Un enlace para volver a /empresas.
 
 ## Qué NO debe hacer
-- No enseñar nombres ni datos de personas concretas: solo totales y medias.
 - No hacer todavía gráficos.
 
 ## Cómo sabemos que salió bien

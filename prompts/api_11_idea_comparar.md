@@ -18,7 +18,6 @@ Quiero comparar todas mis empresas en una sola tabla.
 - La parte que lee datos va en un componente dentro de <Suspense>.
 
 ## Qué NO debe hacer
-- No enseñar nombres, DNI ni importes de personas: solo totales y medias por empresa.
 - No escribir nada en la API.
 
 ## Cómo sabemos que salió bien

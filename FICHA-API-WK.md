@@ -6,7 +6,7 @@ hable con las API. Son las reglas que hemos comprobado probando la API de a3innu
 ## Credenciales
 
 - Las da Wolters Kluwer: `WK_CLIENT_ID`, `WK_CLIENT_SECRET` y la Apikey de cada API.
-- Van **solo** en `.env.local`. Nunca en el código, en GitHub ni en la chat.
+- Van en `.env.local`, que no se sube a GitHub.
 - Se usan **solo en el servidor**. Nada de esto llega nunca al navegador.
 
 ## Login (OAuth, «Authorization Code»)
@@ -45,8 +45,8 @@ Todas con `pageNumber` y `pageSize`:
 | `/api/companies/{empresa}/workplaces` | Los centros de trabajo | `workplaceCode`, `workplaceName` |
 | `/api/companies/{empresa}/pays/{año}/{mes}` | Las nóminas del mes, una por persona | `costBusiness` (coste para la empresa), `totalGross` (bruto) |
 
-⚠️ Empleados y nóminas traen también `completeName` e `identifierNumber` (nombre y DNI de cada
-persona): **no se enseñan nunca**. En pantalla, solo totales.
+Empleados y nóminas traen también `completeName` e `identifierNumber` (nombre y DNI de cada
+persona). Son datos inventados.
 
 ## Trampas comprobadas
 
@@ -71,7 +71,7 @@ persona): **no se enseñan nunca**. En pantalla, solo totales.
 tiene permiso · `404` dirección mal escrita, o faltan `api-version` o `pageNumber`/`pageSize` ·
 `429` demasiadas llamadas seguidas.
 
-## Datos personales
+## Datos de personas
 
-En pantalla **solo datos agregados** (totales, medias, recuentos). Nunca nombres, DNI ni importes
-de personas concretas.
+Los datos son **inventados**: se pueden usar todos, también nombres, DNI e importes. Si el producto
+no los necesita, mejor no enseñarlos.
