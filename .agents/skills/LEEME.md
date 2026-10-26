@@ -35,12 +35,14 @@ también en Copilot.
 | Skill | Para qué |
 |---|---|
 | `wk-api-nomina` | Todo sobre la API de a3innuva Nómina: el login, las cabeceras, las trampas, las **189 lecturas** que ofrece y sus campos. Copilot la usa para saber qué datos existen y cómo pedirlos |
+| `wk-api-a3factura` | La API de a3factura: facturas emitidas y recibidas, clientes, cobros, pagos, productos… (**267 lecturas**). Tiene su propio login y su propia Apikey. **Sin probar todavía** |
+| `wk-api-contabilidad` | La API de a3innuva Contabilidad: cuentas, asientos, balance, facturas, impuestos… (**36 lecturas**). Con su propia Apikey. **Sin probar todavía** |
 
 **Cuándo usarla:** cada vez que quieran algo de la API que no está en la ficha. Por ejemplo:
 *«Usa la skill wk-api-nomina: ¿qué datos hay sobre las bajas por enfermedad?»* o *«…¿cómo saco
 las horas de formación de cada empresa?»*.
 
-**Origen:** la definición oficial de la API (OpenAPI) del portal a3developers de Wolters Kluwer.
+**Origen:** la definición oficial de cada API (OpenAPI) del portal a3developers de Wolters Kluwer.
 
 ## Cómo se usan
 
