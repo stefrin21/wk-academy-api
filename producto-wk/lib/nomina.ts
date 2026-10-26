@@ -15,7 +15,7 @@ export type Empleado = {
   enrolmentDate: string; // fecha de alta
 };
 
-const PAGE_SIZE = 100;
+const PAGE_SIZE = 50; // máximo de la API según la documentación
 
 // Lee todas las páginas de una lista. La API pide siempre pageNumber y pageSize,
 // y si no hay datos responde vacío: entonces devolvemos una lista vacía.
