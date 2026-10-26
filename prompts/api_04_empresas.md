@@ -18,7 +18,6 @@ Quiero ver las empresas a las que tengo acceso, con cuántas personas tiene cada
 - Si algo falla, enseñar el error de verdad (el código HTTP y la ruta), no un mensaje genérico.
 
 ## Qué NO debe hacer
-- No enseñar nombres ni datos de empleados: solo el número.
 - No escribir nada en la API: solo lecturas.
 
 ## Cómo sabemos que salió bien
