@@ -86,6 +86,11 @@ de usuarios a la vez** (error 12); si no se cierra la sesión, puede bloquear a 
   por cliente, **no** hagan una llamada por cliente: lean todos los documentos una vez
   (`ContainersIdstoSearch: [1]`, de 100 en 100) y cuenten en la aplicación por `CustomerId`.
 - **Una sesión por página:** login → lecturas → logout, con el logout en un `finally`.
+- **En Next.js (con Cache Components), la parte que llama a a3doc va dentro de `<Suspense>`.**
+  Si no, Next.js da el error «uncached data accessed outside of `<Suspense>`» (en `next dev`
+  como aviso, y `next build` falla). **No lo arreglen con `"use cache"`:** haría el login al
+  compilar y guardaría los datos. Comprobado: página en un componente síncrono, y la lectura en
+  un componente `async` dentro de `<Suspense fallback=…>`.
 - **En `getdocuments`, `count` es lo que hay en la página, no el total.** Para contar, usen
   `getdocumentsextended` (`countAllDocuments`).
 - **`numDocuments` del árbol de categorías no coincide** con `countAllDocuments` (Laboral: 833 en
