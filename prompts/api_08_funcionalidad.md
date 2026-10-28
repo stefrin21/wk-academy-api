@@ -1,12 +1,12 @@
 # Prompt API 08 · Construir una funcionalidad suya
 
-**Para qué:** convertir una de sus historias de usuario en una funcionalidad de verdad, dentro de
-su aplicación. Siempre en dos tiempos: **primero el plan, después el código.**
+**Para qué:** construir una de las funcionalidades de su PRD, dentro de su aplicación. Siempre en
+dos tiempos: **primero el plan, después el código.**
 
 ### 1 · Primero, el plan
 
 ```
-Lee la historia número [1] de docs/historias.md.
+Lee la funcionalidad número [1] de docs/prd.md.
 Conviértela en un prompt con cuatro partes: Propuesta, Qué debe hacer, Qué NO debe hacer
 y Cómo sabemos que salió bien.
 Respeta las reglas de #file:FICHA-API-WK.md: solo lecturas.
@@ -37,4 +37,4 @@ Usa next-devtools en el puerto 53971: ¿hay errores en mi aplicación?
 Explícamelos en palabras sencillas y arréglalos.
 ```
 
-Cuando funcione, marquen la historia como hecha en `docs/historias.md` y pasen a la siguiente.
+Cuando funcione, escriban *«Marca la funcionalidad [1] como hecha en docs/prd.md»*.
