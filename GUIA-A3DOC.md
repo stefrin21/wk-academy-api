@@ -35,7 +35,8 @@ Con Nómina, ustedes entran en la página de Wolters Kluwer. Con a3doc **entra e
 Ustedes abren la página y ven los datos. **Ni página de login ni botón «Entrar».** La contraseña
 no sale nunca del servidor.
 
-**Las claves**, en `producto-wk/.env.local` (son las mismas del jueves):
+**Las claves:** no tienen que preparar nada. Con el primer prompt, Copilot añade en
+`producto-wk/.env.local` estas líneas vacías y les dice qué poner en cada una:
 
 ```
 A3DOC_URL=
@@ -44,6 +45,9 @@ A3DOC_TENANT=
 A3DOC_USUARIO=
 A3DOC_PASSWORD=
 ```
+
+Ustedes **pegan los valores** que usaron el jueves para conectarse: la dirección, la Apikey, el
+código de cliente (tenant), el usuario y la contraseña de a3doc.
 
 ## El método
 
@@ -72,10 +76,12 @@ Quiero que mi aplicación lea los datos de a3doc, el gestor documental,
 y me enseñe la lista de mis clientes.
 
 ## Qué debe hacer
+- Primero, las claves: añade en producto-wk/.env.local las líneas
+  A3DOC_URL, A3DOC_APIKEY, A3DOC_TENANT, A3DOC_USUARIO y A3DOC_PASSWORD,
+  vacías. Dime qué valor va en cada una y espera a que las rellene yo.
 - Un archivo lib/a3doc.ts, solo para el servidor, que entre en a3doc con
-  los datos de .env.local (A3DOC_URL, A3DOC_APIKEY, A3DOC_TENANT,
-  A3DOC_USUARIO, A3DOC_PASSWORD), lea lo que haga falta y haga logout
-  siempre al terminar, también si hay un error.
+  esas claves, lea lo que haga falta y haga logout siempre al terminar,
+  también si hay un error.
 - Que mire errorCode en cada respuesta: si no es 0, que enseñe el mensaje.
 - Una página /documentos con mis clientes: nombre y NIF.
 - Un enlace a /documentos desde la página de inicio.
@@ -93,8 +99,9 @@ y me enseñe la lista de mis clientes.
 - Si recargo la página varias veces, sigue funcionando.
 ```
 
-**Qué responde Copilot:** crea `lib/a3doc.ts` y la página `/documentos`, y les dice cómo probarla.
-Si no encuentra las claves, les pide que las pongan en `producto-wk/.env.local`.
+**Qué responde Copilot:** primero añade las cinco líneas vacías en `producto-wk/.env.local` y les
+dice qué poner en cada una. Las rellenan, guardan y le escriben «Hecho». Entonces crea
+`lib/a3doc.ts` y la página `/documentos`, y les dice cómo probarla.
 
 ## Sus prompts: las cuatro partes
 
@@ -138,7 +145,7 @@ categoría, para saber qué le falta. En una tabla. Si no tiene documentos, una 
 | Lo que ven | Qué pasa y qué hacer |
 |---|---|
 | «errorCode 3» | Faltan campos en la petición. Díganle: «Mira las trampas de la skill wk-api-a3doc». |
-| «errorCode 4» | Usuario, contraseña o tenant mal escritos en `.env.local`. |
+| «errorCode 4» | Usuario, contraseña o tenant mal copiados en `producto-wk/.env.local`: cópienlos otra vez, sin espacios ni comillas. |
 | «errorCode 6» | El token ya no vale: que haga login otra vez. |
 | «errorCode 12» | No quedan licencias libres: alguna sesión se ha quedado abierta. Avisen al profesor. |
 | La página tarda mucho | Una llamada por cliente es lenta (más de 1 segundo cada una). Díganle: «Lee todos los documentos una vez, de 100 en 100, y cuenta en la aplicación». |
