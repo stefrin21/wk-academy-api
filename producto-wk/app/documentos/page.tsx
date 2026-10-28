@@ -29,7 +29,8 @@ async function Resumen() {
   let clientes, documentos;
   try {
     ({ clientes, documentos } = await conA3doc(async (token) => {
-      const [clientes, documentos] = await Promise.all([getClientes(token), getDocumentos(token)]);
+      const clientes = await getClientes(token);
+      const documentos = await getDocumentos(token);
       return { clientes, documentos };
     }));
   } catch (e) {

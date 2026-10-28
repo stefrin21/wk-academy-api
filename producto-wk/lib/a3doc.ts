@@ -97,12 +97,12 @@ export async function getDocumentos(token: string, filtro: Filtro[] = []): Promi
       sort: "DESC",
       order: "DATE",
     });
+  // Una página cada vez: a3doc (preproducción) da error 500 si se le piden muchas a la vez.
   const primera = await pagina(0);
   const total = primera.countAllDocuments ?? 0;
-  const resto = await Promise.all(
-    Array.from({ length: Math.max(0, Math.ceil(total / TAM) - 1) }, (_, i) => pagina(i + 1)),
-  );
-  return [primera, ...resto].flatMap((p) => p.documents ?? []);
+  const documentos = [...(primera.documents ?? [])];
+  for (let i = 1; i < Math.ceil(total / TAM); i++) documentos.push(...((await pagina(i)).documents ?? []));
+  return documentos;
 }
 
 export const porCliente = (nif: string): Filtro[] => [
