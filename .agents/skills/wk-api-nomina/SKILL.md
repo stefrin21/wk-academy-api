@@ -86,6 +86,11 @@ api-version: 1.0
 | `GET /api/companies/{companyCode}/employees` | Empleados, en activo y de baja | `enrolmentDate`, `dropDate`, `workplaceCode` |
 | `GET /api/companies/{companyCode}/workplaces` | Centros de trabajo | `workplaceCode`, `workplaceName` |
 | `GET /api/companies/{companyCode}/pays/{year}/{month}` | Nóminas del mes, una por persona | `costBusiness` (coste empresa), `totalGross` (bruto) |
+| `GET /api/companies/{companyCode}/temporarydisabilities/{year}/{month}` | Bajas (IT) del mes. Permiso «IT y Absentismos» | `temporaryDisabilityID`, `employeeCode`, `startdate`, `enddate`, `contingencyDescription` |
+
+**Bajas (IT), comprobado el 28/10/2026:** una baja que dura varios meses sale **en cada mes**:
+cuéntenla una sola vez, por su `temporaryDisabilityID`. En los datos de prueba,
+`contingencyDescription` vale «Enfermedad» y hay muy pocas bajas (3 en 2026, en todas las empresas).
 
 Las demás rutas vienen de la documentación oficial y no las hemos probado una a una: si una falla,
 miren el código HTTP (401 token, 403 permiso, 404 dirección o parámetros) antes de cambiar nada.
