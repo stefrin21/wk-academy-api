@@ -34,8 +34,8 @@ hable con las API. Son las reglas que hemos comprobado probando la API de a3innu
 ## Rutas de Nómina que usamos
 
 La lista completa de las 189 lecturas está en la skill `wk-api-nomina`
-(`.agents/skills/wk-api-nomina/`). Para las otras API: `wk-api-a3factura` y `wk-api-contabilidad`
-(cada una con su propia Apikey).
+(`.agents/skills/wk-api-nomina/`). Para las otras API: `wk-api-a3factura`, `wk-api-contabilidad` y `wk-api-a3doc`
+(cada una con su propia Apikey; a3doc, además, con su propio login).
 
 Todas con `pageNumber` y `pageSize`:
 
