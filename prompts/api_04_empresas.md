@@ -9,7 +9,8 @@ Quiero ver las empresas a las que tengo acceso, con cuántas personas tiene cada
 ## Qué debe hacer
 - Crear lib/nomina.ts, solo de servidor, con dos lecturas: la lista de empresas
   (/api/companies) y los empleados de una empresa (/api/companies/{empresa}/employees),
-  siempre con pageNumber y pageSize. Si la API responde vacío, devolver una lista vacía.
+  siempre con pageNumber y pageSize=50, leyendo todas las páginas (1, 2, 3…) hasta que una
+  venga con menos de 50. Si la API responde vacío, devolver una lista vacía.
 - Contar como «en plantilla» a quien tiene fecha de baja "0001-01-01".
 - Una página /empresas con una tabla: nombre (enlace a /empresas/[código]), NIF y personas en
   plantilla. Arriba, un enlace para volver al inicio; en el inicio, con sesión, un enlace a
