@@ -1,7 +1,7 @@
 # Reglas para Copilot en este repositorio
 
-- Haz solo lo que pide el prompt. Si ves otra cosa que mejorar o arreglar, dímelo al final en una
-  línea: no la cambies.
+- Haz solo lo que te pido, en el prompt o en la chat. Si ves otra cosa que mejorar o arreglar,
+  dímelo al final en una línea y pregúntame si la hago.
 - Si algo falla dos veces seguidas, para y explícame qué pasa en palabras sencillas, antes de
   probar otra cosa.
 - No cambies archivos que el prompt no nombra, salvo que sea necesario para que funcione: en ese
