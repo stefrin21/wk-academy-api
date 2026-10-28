@@ -4,7 +4,7 @@ Hoy cada uno elige **una** API para su producto:
 
 - **Nómina:** siguen con su aplicación y los prompts `api_09` … `api_14`, como hasta ahora.
 - **a3doc**, el gestor documental: construyen **a su manera, con sus propios prompts**. Esta guía
-  les da el método.
+  les da el método, las reglas de la conexión e ideas.
 
 Las dos valen igual para la demo. **No las mezclen hoy**: son entornos de prueba distintos y
 sus empresas no coinciden.
@@ -35,7 +35,7 @@ Con Nómina, ustedes entran en la página de Wolters Kluwer. Con a3doc **entra e
 Ustedes abren la página y ven los datos. **Ni página de login ni botón «Entrar».** La contraseña
 no sale nunca del servidor.
 
-**Las claves:** no tienen que preparar nada. Con el primer prompt, Copilot añade en
+**Las claves:** no tienen que preparar nada. Al conectar (abajo), Copilot añade en
 `producto-wk/.env.local` estas líneas vacías y les dice qué poner en cada una:
 
 ```
@@ -63,45 +63,29 @@ Una funcionalidad cada vez. Cuando funcione, la siguiente.
 **Siempre al principio del prompt:** `Usa la skill wk-api-a3doc.` Así Copilot conoce la API, sus
 campos y sus trampas.
 
-## El primer prompt: la conexión
+## Lo primero: la conexión
 
-Es el único que les damos. Cópienlo, cámbienlo si quieren y péguenlo en la chat de Copilot (modo
-Agent):
+Su primera funcionalidad es conectar su aplicación con a3doc. **El prompt lo escriben ustedes**,
+con las cuatro partes de abajo. Tiene que pedirle a Copilot estas seis cosas:
 
-```
-Usa la skill wk-api-a3doc (lee .agents/skills/wk-api-a3doc/SKILL.md).
+1. **La skill:** que empiece con `Usa la skill wk-api-a3doc.`
+2. **Las claves:** que añada en `producto-wk/.env.local` las líneas vacías, les diga qué valor va
+   en cada una y espere a que ustedes las rellenen.
+3. **Solo en el servidor:** un archivo aparte para hablar con a3doc. Usuario, contraseña y Apikey
+   nunca en el código ni en el navegador.
+4. **Sin página de login:** entra el servidor, solo. Ni página ni botón «Entrar».
+5. **Logout siempre** al terminar, también si algo falla.
+6. **Mirar `errorCode`** en cada respuesta: si no es 0, enseñar el mensaje.
 
-## Propuesta
-Quiero que mi aplicación lea los datos de a3doc, el gestor documental,
-y me enseñe la lista de mis clientes.
+Y una primera página para comprobarlo: por ejemplo, la lista de sus clientes.
 
-## Qué debe hacer
-- Primero, las claves: añade en producto-wk/.env.local las líneas
-  A3DOC_URL, A3DOC_APIKEY, A3DOC_TENANT, A3DOC_USUARIO y A3DOC_PASSWORD,
-  vacías. Dime qué valor va en cada una y espera a que las rellene yo.
-- Un archivo lib/a3doc.ts, solo para el servidor, que entre en a3doc con
-  esas claves, lea lo que haga falta y haga logout siempre al terminar,
-  también si hay un error.
-- Que mire errorCode en cada respuesta: si no es 0, que enseñe el mensaje.
-- Una página /documentos con mis clientes: nombre y NIF.
-- Un enlace a /documentos desde la página de inicio.
+**No toquen** el login de Wolters Kluwer ni las páginas de Nómina.
 
-## Qué NO debe hacer
-- Ni página de login ni botón «Entrar»: entra el servidor.
-- No usar nunca los métodos que escriben (uploadextended,
-  updatedocumentattributes, updateappcompanyname, deletedocument).
-- No poner el usuario, la contraseña ni la Apikey en el código
-  ni en el navegador.
-- No tocar el login de Wolters Kluwer ni las páginas de Nómina.
+**Cómo saben que salió bien:**
 
-## Cómo sabemos que salió bien
-- En /documentos salen mis clientes (en la prueba eran 31).
-- Si recargo la página varias veces, sigue funcionando.
-```
-
-**Qué responde Copilot:** primero añade las cinco líneas vacías en `producto-wk/.env.local` y les
-dice qué poner en cada una. Las rellenan, guardan y le escriben «Hecho». Entonces crea
-`lib/a3doc.ts` y la página `/documentos`, y les dice cómo probarla.
+- La página enseña sus clientes (en nuestra prueba, 31).
+- Si recargan varias veces, sigue funcionando.
+- No hay ninguna página de login.
 
 ## Sus prompts: las cuatro partes
 
