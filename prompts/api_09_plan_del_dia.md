@@ -10,7 +10,8 @@ empresa. Los datos que puedo leer están en #file:FICHA-API-WK.md.
 1. Dime qué historias ya están hechas y cuáles no.
 2. De las que faltan, elige 2 o 3 que se puedan construir hoy, en una hora cada una, y
    ordénalas de la más importante a la menos.
-3. Si alguna necesita datos que la API no tiene, dímelo y propón cómo cambiarla.
+3. Si alguna necesita datos que la API no tiene, dímelo y propón cómo cambiarla. Lo que la
+   API tiene está en .agents/skills/wk-api-nomina/SKILL.md.
 Explícamelo en palabras sencillas. No escribas código y no cambies ningún archivo todavía.
 ```
 

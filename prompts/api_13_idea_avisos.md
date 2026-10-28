@@ -17,6 +17,8 @@ Quiero que la lista de empresas me avise de las que necesitan atención.
     anterior.
 - Si no hay ningún aviso, dejar la columna vacía.
 - Explicar en una línea, debajo de la tabla, qué significa cada aviso.
+- Antes de escribir código, comprobar las rutas y los campos en
+  .agents/skills/wk-api-nomina/SKILL.md.
 
 ## Qué NO debe hacer
 - No escribir nada en la API.

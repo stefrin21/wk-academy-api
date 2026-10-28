@@ -18,6 +18,8 @@ gráfico.
   barra, y el número de nóminas al pasar el ratón.
 - Si la empresa no tiene nóminas, decirlo con una frase en vez de enseñar un gráfico vacío.
 - La parte que lee datos va en un componente dentro de <Suspense>.
+- Antes de escribir código, comprobar las rutas y los campos en
+  .agents/skills/wk-api-nomina/SKILL.md.
 
 ## Qué NO debe hacer
 - No escribir nada en la API.

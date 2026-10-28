@@ -27,6 +27,7 @@ Responde en español y guárdalo en docs/problema.md.
 ```
 Lee .agents/skills/prd-development/SKILL.md.
 Usa docs/problema.md y las reglas de #file:FICHA-API-WK.md.
+Para saber qué datos existen de verdad, lee .agents/skills/wk-api-nomina/SKILL.md.
 Genera un PRD breve, de una página, para una primera versión que se pueda construir en una
 mañana. Separa lo que sabemos de lo que suponemos y no inventes datos que falten.
 Responde en español y guárdalo en docs/prd.md.
@@ -39,6 +40,7 @@ Lee .agents/skills/user-story/SKILL.md.
 A partir de docs/prd.md, escribe de 2 a 4 historias de usuario, ordenadas de la más
 importante a la menos, cada una con sus criterios de aceptación.
 Que cada una se pueda construir en menos de una hora con los datos de la API.
+En cada historia, di qué rutas de la API usa: compruébalas en .agents/skills/wk-api-nomina/SKILL.md.
 Responde en español y guárdalo en docs/historias.md.
 ```
 

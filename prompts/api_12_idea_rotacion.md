@@ -16,6 +16,8 @@ Quiero ver en la ficha de cada empresa cuántas personas han entrado y salido ca
     que son personas en activo.
 - Enseñar los últimos 5 años en una tabla: año, altas y bajas.
 - Si la empresa no tiene empleados, decirlo con una frase.
+- Antes de escribir código, comprobar las rutas y los campos en
+  .agents/skills/wk-api-nomina/SKILL.md.
 
 ## Qué NO debe hacer
 - No escribir nada en la API.

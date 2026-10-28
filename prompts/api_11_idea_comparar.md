@@ -16,6 +16,8 @@ Quiero comparar todas mis empresas en una sola tabla.
 - Poder ordenar la tabla pulsando en el título de cada columna.
 - Si a una empresa le falta un dato, enseñar «—», no un error.
 - La parte que lee datos va en un componente dentro de <Suspense>.
+- Antes de escribir código, comprobar las rutas y los campos en
+  .agents/skills/wk-api-nomina/SKILL.md.
 
 ## Qué NO debe hacer
 - No escribir nada en la API.

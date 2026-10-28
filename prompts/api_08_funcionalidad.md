@@ -10,6 +10,7 @@ Lee la historia número [1] de docs/historias.md.
 Conviértela en un prompt con cuatro partes: Propuesta, Qué debe hacer, Qué NO debe hacer
 y Cómo sabemos que salió bien.
 Respeta las reglas de #file:FICHA-API-WK.md: solo lecturas.
+Lee .agents/skills/wk-api-nomina/SKILL.md y di qué rutas y campos de la API vas a usar.
 Pide un enlace para llegar desde las páginas que ya existen.
 Enséñame el prompt y espera a que te diga que sí. No escribas código todavía.
 ```

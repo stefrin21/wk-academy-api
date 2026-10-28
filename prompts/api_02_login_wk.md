@@ -11,7 +11,7 @@ Quiero que el usuario entre en la aplicación con su cuenta de Wolters Kluwer.
 - Crear lib/wk.ts, solo de servidor (import "server-only"), con:
   - la dirección de login de WK (flujo Authorization Code, con el scope de la ficha y un "state");
   - el cambio del código por el token, y el del refresh_token por un token nuevo;
-  - una función para llamar a la API con las tres cabeceras de la ficha (solo GET), que devuelva
+  - una función wkGet para llamar a la API con las tres cabeceras de la ficha (solo GET), que devuelva
     los datos o lance un error con el código HTTP de verdad.
 - Una ruta /entrar que mande a la página de login de WK y guarde el "state" en una cookie.
 - La ruta /Login/CallbackFromWKA (exactamente esta: es la registrada en WK) que compruebe el
