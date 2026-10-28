@@ -23,6 +23,7 @@ Quiero crear el proyecto web de mi producto sobre las API de Wolters Kluwer.
 
 ## Qué NO debe hacer
 - No crear páginas ni instalar otras librerías todavía.
+- No arrancar la aplicación: la arranco yo en mi terminal.
 
 ## Cómo sabemos que salió bien
 - Con cd producto-wk y npm run dev, http://localhost:53971 enseña la página de bienvenida.
