@@ -22,6 +22,7 @@ Quiero que la lista de empresas me avise de las que necesitan atención.
 
 ## Qué NO debe hacer
 - No escribir nada en la API.
+- No cambiar nada que este prompt no pida (reglas en .github/copilot-instructions.md).
 
 ## Cómo sabemos que salió bien
 - Veo la columna «Avisos» en la lista de empresas.

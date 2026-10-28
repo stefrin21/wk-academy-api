@@ -17,6 +17,7 @@ de mi PRD.
 
 ## Qué NO debe hacer
 - No hacer todavía gráficos.
+- No cambiar nada que este prompt no pida (reglas en .github/copilot-instructions.md).
 
 ## Cómo sabemos que salió bien
 - Desde la lista, pulsando una empresa, se abre su ficha con los tres datos.

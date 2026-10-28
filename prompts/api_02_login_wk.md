@@ -26,6 +26,7 @@ Quiero que el usuario entre en la aplicación con su cuenta de Wolters Kluwer.
 - No crear un formulario de usuario y contraseña.
 - No mandar nunca al navegador el client secret, la Apikey ni los tokens.
 - No llamar todavía a la API para enseñar datos.
+- No cambiar nada que este prompt no pida (reglas en .github/copilot-instructions.md).
 
 ## Cómo sabemos que salió bien
 - Pulsando «Entrar con Wolters Kluwer» aparece la página de WK.

@@ -21,6 +21,7 @@ Quiero ver en la ficha de cada empresa cuántas personas han entrado y salido ca
 
 ## Qué NO debe hacer
 - No escribir nada en la API.
+- No cambiar nada que este prompt no pida (reglas en .github/copilot-instructions.md).
 
 ## Cómo sabemos que salió bien
 - En la ficha de una empresa veo la tabla de los últimos 5 años.

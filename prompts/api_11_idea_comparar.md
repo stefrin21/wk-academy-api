@@ -21,6 +21,7 @@ Quiero comparar todas mis empresas en una sola tabla.
 
 ## Qué NO debe hacer
 - No escribir nada en la API.
+- No cambiar nada que este prompt no pida (reglas en .github/copilot-instructions.md).
 
 ## Cómo sabemos que salió bien
 - Desde la lista de empresas llego a /comparar con un clic.

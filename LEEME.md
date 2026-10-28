@@ -19,6 +19,7 @@ Wolters Kluwer.
 | Archivo | Para qué |
 |---|---|
 | `FICHA-API-WK.md` | Las reglas de las API que Copilot tiene que conocer. Se adjunta en la chat con `#file:FICHA-API-WK.md` |
+| `.github/copilot-instructions.md` | Las reglas de trabajo de Copilot (hacer solo lo que pide el prompt, parar si algo falla dos veces…). Copilot las lee solo, en cada mensaje |
 | `prompts/api_01` … `api_05` | La base: proyecto, login con WK, protección de las páginas, empresas y ficha |
 | `prompts/api_06` … `api_08` | Copilot ve su aplicación (MCP), su PRD con las skills y sus funcionalidades |
 | `prompts/api_09` … `api_14` | Módulo 5: el plan del día, cuatro ideas de funcionalidades y la revisión de calidad |

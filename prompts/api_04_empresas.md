@@ -20,6 +20,7 @@ Quiero ver las empresas a las que tengo acceso, con cuántas personas tiene cada
 
 ## Qué NO debe hacer
 - No escribir nada en la API: solo lecturas.
+- No cambiar nada que este prompt no pida (reglas en .github/copilot-instructions.md).
 
 ## Cómo sabemos que salió bien
 - Desde el inicio, con sesión, llego a /empresas pulsando un enlace.

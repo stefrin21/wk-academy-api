@@ -23,6 +23,7 @@ gráfico.
 
 ## Qué NO debe hacer
 - No escribir nada en la API.
+- No cambiar nada que este prompt no pida (reglas en .github/copilot-instructions.md).
 
 ## Cómo sabemos que salió bien
 - En la ficha de una empresa con nóminas veo un gráfico con sus meses.

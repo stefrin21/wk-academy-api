@@ -20,6 +20,7 @@ Quiero que nadie vea los datos sin haber entrado, y que la sesión no caduque ca
 ## Qué NO debe hacer
 - No llamar al archivo middleware.ts.
 - No guardar los tokens en ningún sitio que no sean las cookies httpOnly.
+- No cambiar nada que este prompt no pida (reglas en .github/copilot-instructions.md).
 
 ## Cómo sabemos que salió bien
 - Sin haber entrado, abro http://localhost:53971/empresas y acabo en la página de inicio.
