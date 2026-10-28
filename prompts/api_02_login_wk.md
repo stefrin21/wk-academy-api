@@ -31,4 +31,10 @@ Quiero que el usuario entre en la aplicación con su cuenta de Wolters Kluwer.
 - Pulsando «Entrar con Wolters Kluwer» aparece la página de WK.
 - Después del login vuelvo a http://localhost:53971 y veo «Sesión iniciada».
 - Pulsando «Salir» vuelve a salir el botón de entrar.
+
+## Al terminar
+La aplicación ya está encendida en el puerto 53971: no la arranques.
+Comprueba tú, con curl.exe a http://localhost:53971, los puntos de «Cómo sabemos que
+salió bien» que se puedan comprobar sin el navegador. Enséñame una tabla: qué has
+comprobado y qué ha salido. Y dime qué tengo que comprobar yo en el navegador.
 ```

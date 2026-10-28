@@ -21,4 +21,10 @@ de mi PRD.
 ## Cómo sabemos que salió bien
 - Desde la lista, pulsando una empresa, se abre su ficha con los tres datos.
 - Una empresa sin empleados enseña 0, no un error.
+
+## Al terminar
+La aplicación ya está encendida en el puerto 53971: no la arranques.
+Comprueba tú, con curl.exe a http://localhost:53971, los puntos de «Cómo sabemos que
+salió bien» que se puedan comprobar sin el navegador. Enséñame una tabla: qué has
+comprobado y qué ha salido. Y dime qué tengo que comprobar yo en el navegador.
 ```

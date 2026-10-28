@@ -24,4 +24,10 @@ Quiero que nadie vea los datos sin haber entrado, y que la sesión no caduque ca
 ## Cómo sabemos que salió bien
 - Sin haber entrado, abro http://localhost:53971/empresas y acabo en la página de inicio.
 - Existe producto-wk/proxy.ts.
+
+## Al terminar
+La aplicación ya está encendida en el puerto 53971: no la arranques.
+Comprueba tú, con curl.exe a http://localhost:53971, los puntos de «Cómo sabemos que
+salió bien» que se puedan comprobar sin el navegador. Enséñame una tabla: qué has
+comprobado y qué ha salido. Y dime qué tengo que comprobar yo en el navegador.
 ```

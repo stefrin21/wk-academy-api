@@ -23,4 +23,10 @@ Quiero ver las empresas a las que tengo acceso, con cuántas personas tiene cada
 ## Cómo sabemos que salió bien
 - Desde el inicio, con sesión, llego a /empresas pulsando un enlace.
 - /empresas enseña mis empresas con su número de personas en plantilla.
+
+## Al terminar
+La aplicación ya está encendida en el puerto 53971: no la arranques.
+Comprueba tú, con curl.exe a http://localhost:53971, los puntos de «Cómo sabemos que
+salió bien» que se puedan comprobar sin el navegador. Enséñame una tabla: qué has
+comprobado y qué ha salido. Y dime qué tengo que comprobar yo en el navegador.
 ```
