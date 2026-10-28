@@ -10,6 +10,15 @@ export default function Home() {
       <Suspense fallback={<p className="text-zinc-500">Cargando…</p>}>
         <Sesion />
       </Suspense>
+      <div className="flex flex-col items-center gap-2 border-t border-zinc-200 pt-8">
+        <p className="text-sm text-zinc-500">a3doc · el gestor documental (sin login: entra el servidor)</p>
+        <Link
+          href="/documentos"
+          className="rounded-full border border-blue-700 px-6 py-3 font-medium text-blue-700 hover:bg-blue-50"
+        >
+          Ver mis documentos
+        </Link>
+      </div>
     </main>
   );
 }
