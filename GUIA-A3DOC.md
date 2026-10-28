@@ -134,6 +134,7 @@ categoría, para saber qué le falta. En una tabla. Si no tiene documentos, una 
 | «errorCode 12» | No quedan licencias libres: alguna sesión se ha quedado abierta. Avisen al profesor. |
 | La página tarda mucho | Una llamada por cliente es lenta (más de 1 segundo cada una). Díganle: «Lee todos los documentos una vez, de 100 en 100, y cuenta en la aplicación». |
 | «outside of `<Suspense>`» o «blocking» | Díganle: «Pon la parte que llama a a3doc dentro de `<Suspense>`, como en las páginas de Nómina. No uses "use cache".» |
+| HTTP **500** «Internal server error», también en el login | El servidor de a3doc no responde. Esperen unos minutos. Díganle a Copilot que lea las páginas **de una en una**, no todas a la vez. Si sigue, avisen al profesor |
 | «Copilot quiere subir o borrar un documento» | Díganle que no: solo lectura. |
 | «Algo falla y no sé qué es» | «Usa next-devtools en el puerto 53971: ¿hay errores? Explícamelos y arréglalos.» |
 

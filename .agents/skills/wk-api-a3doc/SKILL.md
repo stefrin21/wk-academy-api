@@ -85,6 +85,8 @@ de usuarios a la vez** (error 12); si no se cierra la sesión, puede bloquear a 
 - **Cada llamada tarda más de 1 segundo** (login ~1 s, listado ~1,3 s). Para contar documentos
   por cliente, **no** hagan una llamada por cliente: lean todos los documentos una vez
   (`ContainersIdstoSearch: [1]`, de 100 en 100) y cuenten en la aplicación por `CustomerId`.
+  **Las páginas, de una en una, no en paralelo:** con muchas peticiones a la vez la
+  preproducción respondió HTTP 500 a todo, también al login (28/10/2026).
 - **Una sesión por página:** login → lecturas → logout, con el logout en un `finally`.
 - **En Next.js (con Cache Components), la parte que llama a a3doc va dentro de `<Suspense>`.**
   Si no, Next.js da el error «uncached data accessed outside of `<Suspense>`» (en `next dev`
