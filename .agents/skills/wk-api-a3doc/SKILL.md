@@ -5,9 +5,10 @@ description: Leer datos de la API de a3doc Cloud de Wolters Kluwer (el gestor do
 
 # API de a3doc Cloud (Wolters Kluwer · gestor documental)
 
-> ⚠️ **Todavía sin probar por nosotros.** Esta skill sale de la documentación oficial
-> (a3developers.wolterskluwer.es/doc/a3doccloud, 28/10/2026) y de una colección de Postman que
-> nos ha pasado una alumna. Lo que funcione o falle, apúntenlo aquí.
+> ✅ **Probada el 28/10/2026 en preproducción** (`login`, `userinfo`, `getcustomerslistextended`,
+> `containerstree`, `getdocuments`, `getdocumentsextended` con filtros, `logout`): 31 clientes,
+> 177 categorías, 862 documentos. Los demás métodos salen de la documentación oficial
+> (a3developers.wolterskluwer.es/doc/a3doccloud) sin probar.
 
 **Es muy distinta de las otras API de WK.** No usa el login de Wolters Kluwer ni la cabecera
 `Authorization`: tiene **su propio login** y el token va **dentro del cuerpo** de cada petición.
@@ -46,7 +47,7 @@ Usen la dirección y la Apikey **que les hayan dado con su usuario**: son del mi
 }
 ```
 
-Responde con `token` y `status` (`errorCode`, `errorMessage`).
+Responde con `token`, `errorCode` y `errorMessage` (en el login vienen **sueltos**, no dentro de `status`).
 
 **2 · Las lecturas.** Cada método lleva el token **en el cuerpo**:
 
@@ -69,6 +70,27 @@ de usuarios a la vez** (error 12); si no se cierra la sesión, puede bloquear a 
 - **`PageSize` máximo: 100.** Lean todas las páginas hasta que una venga con menos.
 - **Los nombres de los campos cambian de mayúsculas** según el método (`PageIndex` en unos,
   `pageIndex` en otros): copien exactamente los de [`reference/metodos.md`](reference/metodos.md).
+- **`getdocumentsextended` da error 3 si faltan `Filter`, `sort` y `order`**, aunque la
+  documentación diga que son opcionales. Este cuerpo funciona (comprobado):
+  ```json
+  { "token": "...", "ContainersIdstoSearch": [10], "SearchChildContainers": true,
+    "PageIndex": 0, "PageSize": 100, "Filter": [], "sort": "DESC", "order": "DATE" }
+  ```
+  El total está en `countAllDocuments`. Cada documento trae `Code`, `Id`, `Title`, `Type`,
+  `Size`, `Date` (dd/mm/aaaa), `DateModified`, `CustomerId`, `CustomerName`, `IsAppDoc` (texto
+  `"true"`/`"false"`), `ContainersId` y `Attributes` (lista de `{id, name, value, description}`).
+- **Filtros comprobados** (en `Filter`, dentro de `getdocumentsextended`):
+  - por cliente: `{"AttributeId": 1, "MatchWholeWord": true, "FilterValue": "<NIF>"}`
+  - por fechas: `{"AttributeId": 4, "MatchWholeWord": false, "FilterValue": "2026-01-01", "FilterEndValue": "2026-12-31"}`
+- **Cada llamada tarda más de 1 segundo** (login ~1 s, listado ~1,3 s). Para contar documentos
+  por cliente, **no** hagan una llamada por cliente: lean todos los documentos una vez
+  (`ContainersIdstoSearch: [1]`, de 100 en 100) y cuenten en la aplicación por `CustomerId`.
+- **Una sesión por página:** login → lecturas → logout, con el logout en un `finally`.
+- **En `getdocuments`, `count` es lo que hay en la página, no el total.** Para contar, usen
+  `getdocumentsextended` (`countAllDocuments`).
+- **`numDocuments` del árbol de categorías no coincide** con `countAllDocuments` (Laboral: 833 en
+  el árbol, 622 al listar): un documento puede estar en varias categorías. Para contar
+  documentos, usen el listado.
 
 ## Los métodos de lectura
 
@@ -79,8 +101,8 @@ Todos los detalles (cuerpo y respuesta) en [`reference/metodos.md`](reference/me
 | `POST /login` · `POST /logout` | Entrar y salir |
 | `POST /userinfo` | Datos del usuario conectado |
 | `POST /appinfo` | Datos de la aplicación |
-| `POST /getcustomerslistextended` | **Clientes** a los que tiene acceso el usuario (`code`, `id` = NIF, `name`), con búsqueda por NIF o nombre |
-| `POST /containerstree` | **Categorías** en árbol (`id`, `name`, `parentId`, `numDocuments`, `children`); se puede filtrar por cliente |
+| `POST /getcustomerslistextended` | **Clientes** a los que tiene acceso el usuario (`code`, `id` = NIF, `name`), con búsqueda por NIF o nombre. Cuerpo comprobado: `{"token":"...","PageIndex":0,"PageSize":100,"Order":1,"Sort":0,"Filter":""}` |
+| `POST /containerstree` | **Categorías** en árbol (`id`, `name`, `parentId`, `numDocuments`, `children`); se puede filtrar por cliente. Raíz `1 Todos`; debajo `10 Laboral`, `200 Fiscal`, `500 Gestión`, `640 Facturas a contabilizar`… |
 | `POST /getdocuments` | **Documentos** de una categoría, con búsqueda por texto, cliente o título |
 | `POST /getdocumentsextended` | **Documentos** de varias categorías, con filtros por atributo (por ejemplo, por fechas) → `Id`, `Title`, `Type`, `Date`, `CustomerName`, `Size`… y `countAllDocuments` |
 | `POST /datemodified` | Última modificación de un documento |

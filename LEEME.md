@@ -23,6 +23,7 @@ Wolters Kluwer.
 | `prompts/api_01` … `api_05` | La base: proyecto, login con WK, protección de las páginas, empresas y ficha |
 | `prompts/api_06` … `api_08` | Copilot ve su aplicación (MCP), su PRD (con la skill `prd-development`) y su primera funcionalidad |
 | `prompts/api_09` … `api_14` | Módulo 5: el plan del día, cuatro ideas de funcionalidades y la revisión de calidad |
+| `GUIA-A3DOC.md` | Módulo 5, para quien construya con a3doc (el gestor documental): cómo funciona sin login, el primer prompt, ideas y errores |
 | `.agents/skills/` | Skills ya instaladas: las cuatro de producto (`problem-statement`, `jobs-to-be-done`, `prd-development`, `user-story`) `grilling` / `grill-me`, para poner a prueba una idea, y las de las API de WK: `wk-api-nomina`, `wk-api-a3factura`, `wk-api-contabilidad` y `wk-api-a3doc` |
 
 La aplicación se crea dentro de este repositorio, en la carpeta `producto-wk`.

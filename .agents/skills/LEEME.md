@@ -37,7 +37,7 @@ también en Copilot.
 | `wk-api-nomina` | Todo sobre la API de a3innuva Nómina: el login, las cabeceras, las trampas, las **189 lecturas** que ofrece y sus campos. Copilot la usa para saber qué datos existen y cómo pedirlos |
 | `wk-api-a3factura` | La API de a3factura: facturas emitidas y recibidas, clientes, cobros, pagos, productos… (**267 lecturas**). Tiene su propio login y su propia Apikey. **Sin probar todavía** |
 | `wk-api-contabilidad` | La API de a3innuva Contabilidad: cuentas, asientos, balance, facturas, impuestos… (**36 lecturas**). Con su propia Apikey. **Sin probar todavía** |
-| `wk-api-a3doc` | La API de a3doc Cloud, el gestor documental: clientes, categorías y documentos. Login propio, todo con `POST` y el token dentro del cuerpo. **Sin probar todavía** |
+| `wk-api-a3doc` | La API de a3doc Cloud, el gestor documental: clientes, categorías y documentos. Login propio, todo con `POST` y el token dentro del cuerpo. **Probada** (preproducción) |
 
 **Cuándo usarla:** cada vez que quieran algo de la API que no está en la ficha. Por ejemplo:
 *«Usa la skill wk-api-nomina: ¿qué datos hay sobre las bajas por enfermedad?»* o *«…¿cómo saco
