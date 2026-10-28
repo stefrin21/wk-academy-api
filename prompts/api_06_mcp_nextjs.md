@@ -26,6 +26,7 @@ Quiero que Copilot pueda ver mi aplicación mientras funciona, con el MCP de Nex
 
 ## Qué NO debe hacer
 - No tocar la aplicación de producto-wk.
+- No cambiar nada que este prompt no pida (reglas en .github/copilot-instructions.md).
 
 ## Cómo sabemos que salió bien
 - En .vscode/mcp.json aparece next-devtools y, encima, el botón para arrancarlo.
