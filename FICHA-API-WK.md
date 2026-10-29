@@ -65,6 +65,12 @@ persona). Son datos inventados.
   comprobar que **empiece por** `0001-01-01`.
 - Para conectarse desde el terminal, usar `curl.exe`: el cortafuegos de WK bloquea otras
   herramientas (por ejemplo Python) con «error code: 1010».
+- Si la aplicación da `fetch failed (SELF_SIGNED_CERT_IN_CHAIN)`, no es el código: es la red, la
+  VPN o el antivirus del ordenador, que pone su propio certificado. Hay que parar la aplicación,
+  escribir en PowerShell `$env:NODE_OPTIONS="--use-system-ca"` (en cmd:
+  `set NODE_OPTIONS=--use-system-ca`) y volver a arrancar con `npm run dev`, en ese mismo
+  terminal. **Nunca** `NODE_TLS_REJECT_UNAUTHORIZED=0` ni `rejectUnauthorized: false`: apagan la
+  seguridad de todas las conexiones.
 
 ## Qué significa cada respuesta
 

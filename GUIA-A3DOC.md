@@ -136,6 +136,7 @@ categoría, para saber qué le falta. En una tabla. Si no tiene documentos, una 
 | La página tarda mucho | Una llamada por cliente es lenta (más de 1 segundo cada una). Díganle: «Lee todos los documentos una vez, de 100 en 100, y cuenta en la aplicación». |
 | «outside of `<Suspense>`» o «blocking» | Díganle: «Pon la parte que llama a a3doc dentro de `<Suspense>`, como en las páginas de Nómina. No uses "use cache".» |
 | HTTP **500** «Internal server error», también en el login | El servidor de a3doc no responde. Esperen unos minutos. Díganle a Copilot que lea las páginas **de una en una**, no todas a la vez. Si sigue, avisen al profesor |
+| `SELF_SIGNED_CERT_IN_CHAIN` o «fetch failed» | La red o el antivirus de su ordenador. Paren la aplicación, escriban en PowerShell `$env:NODE_OPTIONS="--use-system-ca"` y vuelvan a arrancar con `npm run dev`. **No** acepten que Copilot ponga `NODE_TLS_REJECT_UNAUTHORIZED=0`. |
 | «Copilot quiere subir o borrar un documento» | Díganle que no: solo lectura. |
 | «Algo falla y no sé qué es» | «Usa next-devtools en el puerto 53971: ¿hay errores? Explícamelos y arréglalos.» |
 
