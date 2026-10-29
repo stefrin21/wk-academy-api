@@ -5,10 +5,11 @@ description: Leer datos de la API de a3factura (a3innuva ERP) de Wolters Kluwer.
 
 # API de a3factura (a3innuva ERP · Wolters Kluwer)
 
-> ⚠️ **Todavía sin probar.** Esta skill sale de la documentación oficial (OpenAPI «API a3innuva ERP
-> - a3factura» 2.0, portal a3developers, 26/10/2026). Para probarla hace falta **una cuenta de
-> a3factura con datos** y **la Apikey de Conectia de a3factura**: con las credenciales de Nómina
-> no se entra. Lo que funcione o falle, apúntenlo aquí.
+> ✅ **Login y lecturas principales probados el 29/10/2026** con una cuenta de prueba
+> (*WKE_AI_Product_Academy_a3factura*): ver «Comprobado con datos reales» más abajo. El resto sale
+> de la documentación oficial (OpenAPI «API a3innuva ERP - a3factura» 2.0, portal a3developers,
+> 26/10/2026). Hace falta **una cuenta de a3factura** y **la Apikey de a3factura**: con las
+> credenciales de Nómina no se entra. Lo que funcione o falle, apúntenlo aquí.
 
 ## Reglas del curso
 
@@ -42,13 +43,41 @@ Existe también `POST /api/token/applicationToken` (con `applicationName` y `cre
 el login para aplicaciones, pero la documentación no dice de dónde salen esas credenciales.
 **Pregúntenlo a la persona responsable de las API antes de usarlo.**
 
-**Cada lectura lleva tres cabeceras:**
+**Cada lectura lleva estas cabeceras:**
 
 ```
+accept: application/json
 Ocp-Apim-Subscription-Key: <Apikey de a3factura>
-Authorization: <token>          (la documentación lo llama «Access token»; si falla, prueben "Bearer <token>")
+Authorization: <token>          (el token solo, SIN «Bearer»: con «Bearer» responde 401)
 api-version: 2.0
 ```
+
+## Comprobado con datos reales (29/10/2026)
+
+- **Las credenciales son las de la aplicación web** (correo y contraseña), pero **sin MFA**: el
+  código por correo solo lo pide la web.
+- **Login:** funcionan `POST /api/token/signin` y `POST /api/users/login`, los dos con el cuerpo
+  `{"mail": "...", "password": "..."}` y las cabeceras `Content-Type: application/json`,
+  `api-version: 2.0` y la Apikey. Con `user` o `username` en vez de `mail`: **401**.
+- **La respuesta del login** trae `token`, `refreshToken`, `id`, `mail`, `isAdvisor` y
+  `companies` (con `id`, `name`, `idCDA`).
+- **Con una sola empresa no hay que elegirla:** el token del login ya sirve para leer.
+- **`Authorization: <token>`, sin «Bearer».** Con «Bearer» delante: **401**.
+- **`pageSize`:** acepta al menos 500 sin cortar (en Nómina el máximo es 50). Aun así, lean
+  página a página hasta que una venga incompleta.
+- **Trampa de nombres:** el IVA se llama `totalTax` en las facturas emitidas y `taxTotal` en las
+  recibidas.
+- **Datos de prueba raros:** el panel de la web dice 48 millones € pendientes de cobro con menos
+  de 30.000 € facturados en 2026. Avisen antes de enseñar una cifra rara.
+- **Sin probar todavía:** cuánto dura el token y `POST /api/token/refresh`.
+
+| Ruta | Elementos en la cuenta de prueba | Campos útiles |
+|---|---|---|
+| `GET /api/products` | 36 | `code`, `description`, `salePrice`, `purchasePrice`, `stockUnits` |
+| `GET /api/customers` | 73 | `code`, `name`, `vatNumber`, `town`, `province`, `enabled` |
+| `GET /api/suppliers` | 13 | `code`, `name`, `vatNumber`, `town`, `enabled` |
+| `GET /api/saleInvoices` | 791 | `number`, `date`, `customerId`, `customerName`, `taxBase`, `totalTax`, `total`, `situation`, `isRectificative` |
+| `GET /api/purchaseInvoices` | 40 | `number`, `date`, `supplierId`, `supplierName`, `taxBase`, `taxTotal`, `total`, `situation` |
 
 ## Las listas
 

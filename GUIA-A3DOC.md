@@ -5,8 +5,9 @@ Hoy cada uno elige **una** API para su producto:
 - **Nómina:** siguen con su aplicación y los prompts `api_09` … `api_14`, como hasta ahora.
 - **a3doc**, el gestor documental: construyen **a su manera, con sus propios prompts**. Esta guía
   les da el método, las reglas de la conexión e ideas.
+- **a3factura**, la facturación: con `GUIA-A3FACTURA.md`.
 
-Las dos valen igual para la demo. **No las mezclen hoy**: son entornos de prueba distintos y
+Las tres valen igual para la demo. **No las mezclen hoy**: son entornos de prueba distintos y
 sus empresas no coinciden.
 
 ## Qué es a3doc
