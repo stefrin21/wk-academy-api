@@ -30,6 +30,20 @@ ustedes contestan («sí» acepta la respuesta recomendada).
 `grilling` está copiada sin cambios; a `grill-me` le hemos añadido una línea para que funcione
 también en Copilot.
 
+## De la idea al prompt
+
+| Skill | Para qué |
+|---|---|
+| `open-specs` | Convierte una idea, una funcionalidad del PRD o una petición suelta en **un prompt listo para pegar**, siempre con las mismas partes: Propuesta, Qué debe hacer, Qué NO debe hacer, Cómo sabemos que salió bien y Al terminar. Antes de escribirlo, mira lo que ya existe en el proyecto y comprueba que los datos existen. **No escribe código**: enseña el prompt y espera a que digan que sí |
+
+**Cuándo usarla:** después del PRD, para cada funcionalidad, o cuando tengan una idea y no sepan
+cómo pedírsela a Copilot. Por ejemplo: *«Usa la skill open-specs con la funcionalidad 1 de
+docs/prd.md»* o *«…con esta idea: [su idea]»*. Lean el prompt, corríjanlo, y cuando les guste,
+pídanle que lo construya.
+
+**Origen:** escrita para este curso. Es genérica: sirve para cualquier proyecto, no solo para las
+API de Wolters Kluwer.
+
 ## Las API de Wolters Kluwer
 
 | Skill | Para qué |
